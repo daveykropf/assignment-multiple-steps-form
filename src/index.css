@@ -1,16 +1,22 @@
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --error: red;
+  --color-text: #6b6375;
+  --color-heading: #08060d;
+  --color-bg: #fff;
+  --color-error: red;
+  --color-border: #ddd;
+
+  --radius-6: 6px;
+
+  --gap-6: 6px;
+  --gap-12: 12px;
 
   --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
   --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
 
   font: 18px/145% var(--sans);
   letter-spacing: 0.18px;
-  color: var(--text);
-  background: var(--bg);
+  color: var(--color-text);
+  background: var(--color-bg);
 
   @media (max-width: 1024px) {
     font-size: 16px;
@@ -37,7 +43,7 @@ h1 {
   margin: 32px 0;
   font-family: var(--heading);
   font-weight: 500;
-  color: var(--text-h);
+  color: var(--color-heading);
 
   @media (max-width: 1024px) {
     font-size: 36px;

@@ -11,7 +11,7 @@ import { StepThankYou } from './steps/StepThankYou'
 type Step = 1 | 2 | 3 | 4
 
 export function MultipleStepsForm() {
-  const [step, setStep] = useState<Step>(1)
+  const [step, setStep] = useState<Step>(2)
 
   const form = useAppForm({
     ...multiStepFormOpts,
@@ -24,9 +24,9 @@ export function MultipleStepsForm() {
 
   return (
     <form onSubmit={handleOnSubmit}>
-      {step === 1 && <StepPersonal form={form} setStep={(s) => setStep(s as Step)} />}
-      {step === 2 && <StepBasicInsurance form={form} setStep={(s) => setStep(s as Step)} />}
-      {step === 3 && <StepAdditional form={form} setStep={(s) => setStep(s as Step)} />}
+      {step === 1 && <StepPersonal setStep={(s) => setStep(s as Step)} {...{ form }} />}
+      {step === 2 && <StepBasicInsurance setStep={(s) => setStep(s as Step)} {...{ form }} />}
+      {step === 3 && <StepAdditional setStep={(s) => setStep(s as Step)} {...{ form }} />}
       {step === 4 && <StepThankYou />}
     </form>
   )
