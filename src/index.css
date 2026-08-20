@@ -2,6 +2,7 @@
   --text: #6b6375;
   --text-h: #08060d;
   --bg: #fff;
+  --error: red;
 
   --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
   --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
