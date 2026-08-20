@@ -21,3 +21,4 @@ Use the following command: `yarn preview`. Now you can visit the url `http://loc
 - [TanStack Form: Multi-step wizard example](https://tanstack.com/form/latest/docs/framework/react/examples/multi-step-wizard)
 - [TanStack Form: Form Groups](https://tanstack.com/form/latest/docs/framework/react/guides/form-groups)
 - [TanStack Form: Form Composition](https://tanstack.com/form/latest/docs/framework/react/guides/form-composition)
+- [Zod: Schema validation](https://zod.dev/)

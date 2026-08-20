@@ -1,5 +1,6 @@
 import { formOptions } from '@tanstack/react-form'
 import { personalSchema } from '../../schemas/personal.schema'
+import { basicInsuranceSelectionSchema } from '../../schemas/insurance.schema'
 
 export const multiStepFormOpts = formOptions({
   defaultValues: {
@@ -10,7 +11,13 @@ export const multiStepFormOpts = formOptions({
       email: '',
       address: '',
     },
+    basicInsurance: {
+      selectedPlanId: '',
+    },
+    additionalInsurance: {
+      selectedPlanIds: [] as string[],
+    },
   },
 })
 
-export { personalSchema }
+export { personalSchema, basicInsuranceSelectionSchema }
