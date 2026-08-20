@@ -1,6 +1,13 @@
+import type { z } from 'zod'
 import { formOptions } from '@tanstack/react-form'
 import { personalSchema } from '../../schemas/personal.schema'
-import { basicInsuranceSelectionSchema } from '../../schemas/insurance.schema'
+import { basicInsuranceSelectionSchema, additionalInsuranceSelectionSchema } from '../../schemas/insurance.schema'
+
+type DefaultValues = {
+  personal: z.infer<typeof personalSchema>
+  basicInsurance: z.infer<typeof basicInsuranceSelectionSchema>
+  additionalInsurance: z.infer<typeof additionalInsuranceSelectionSchema>
+}
 
 export const multiStepFormOpts = formOptions({
   defaultValues: {
@@ -15,9 +22,9 @@ export const multiStepFormOpts = formOptions({
       selectedPlanId: '',
     },
     additionalInsurance: {
-      selectedPlanIds: [] as string[],
+      selectedPlanIds: [],
     },
-  },
+  } satisfies DefaultValues,
 })
 
-export { personalSchema, basicInsuranceSelectionSchema }
+export { personalSchema, basicInsuranceSelectionSchema, additionalInsuranceSelectionSchema }

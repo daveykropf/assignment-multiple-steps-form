@@ -11,7 +11,7 @@ import { StepThankYou } from './steps/StepThankYou'
 type Step = 1 | 2 | 3 | 4
 
 export function MultipleStepsForm() {
-  const [step, setStep] = useState<Step>(2)
+  const [step, setStep] = useState<Step>(1)
 
   const form = useAppForm({
     ...multiStepFormOpts,

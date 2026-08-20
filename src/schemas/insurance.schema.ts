@@ -19,3 +19,7 @@ export type InsuranceData = z.infer<typeof insuranceDataSchema>
 export const basicInsuranceSelectionSchema = z.object({
   selectedPlanId: z.string().min(1, 'Kies een basisverzekering'),
 })
+
+export const additionalInsuranceSelectionSchema = z.object({
+  selectedPlanIds: z.array(z.string()),
+})
