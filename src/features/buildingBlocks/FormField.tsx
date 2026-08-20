@@ -15,6 +15,36 @@ export function FormFieldText({ label }: { label: string }) {
   )
 }
 
+export function FormFieldEmail({ label }: { label: string }) {
+  const field = useFieldContext<string>()
+
+  return (
+    <FormFieldBase label={label}>
+      <input
+        id={field.name}
+        type="email"
+        value={field.state.value}
+        onChange={(e) => field.handleChange(e.target.value)}
+      />
+    </FormFieldBase>
+  )
+}
+
+export function FormFieldDate({ label }: { label: string }) {
+  const field = useFieldContext<string>()
+
+  return (
+    <FormFieldBase label={label}>
+      <input
+        id={field.name}
+        type="date"
+        value={field.state.value}
+        onChange={(e) => field.handleChange(e.target.value)}
+      />
+    </FormFieldBase>
+  )
+}
+
 function FormFieldBase({
   label,
   children,
