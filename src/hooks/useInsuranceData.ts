@@ -13,11 +13,12 @@ export function useInsuranceData() {
 
   return {
     ...query,
-    basicInsuranceOptions: toRadioOptions(query.data?.basicInsurance ?? []),
+    basicInsuranceOptions: toSelectOptions(query.data?.basicInsurance ?? []),
+    additionalInsuranceOptions: toSelectOptions(query.data?.additionalInsurance ?? []),
   }
 }
 
-function toRadioOptions(plans: InsurancePlan[]) {
+function toSelectOptions(plans: InsurancePlan[]) {
   return plans.map((plan) => ({
     value: plan.id,
     label: `${plan.name} - €${plan.price.toFixed(2)} p/m`,

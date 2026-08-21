@@ -1,5 +1,5 @@
 import { createFormHook } from '@tanstack/react-form'
-import { FormFieldText, FormFieldEmail, FormFieldDate, FormFieldRadioGroup } from '../features/buildingBlocks/FormField'
+import { FormFieldText, FormFieldEmail, FormFieldDate, FormFieldRadioGroup, FormFieldCheckboxGroup } from '../features/buildingBlocks/FormField'
 import { fieldContext, formContext } from './form-context'
 
 export const { useAppForm, withForm } = createFormHook({
@@ -8,6 +8,7 @@ export const { useAppForm, withForm } = createFormHook({
     FormFieldEmail,
     FormFieldDate,
     FormFieldRadioGroup,
+    FormFieldCheckboxGroup,
   },
   formComponents: {},
   fieldContext,

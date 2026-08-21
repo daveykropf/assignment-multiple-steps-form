@@ -6,19 +6,20 @@ type LabelProps = {
   label: string
 }
 
-type RadioOption = {
+type SelectOption = {
   value: string
   label: string
   description?: string
 }
 
-type RadioGroupProps = {
+type SelectGroupProps = {
   legend: string
-  options: RadioOption[]
+  options: SelectOption[]
 }
 
-type RadioGroupItemProps = {
-  option: RadioOption
+type SelectGroupItemProps = {
+  type: 'radio' | 'checkbox'
+  option: SelectOption
   name: string
   checked: boolean
   onChange: () => void
@@ -78,20 +79,49 @@ export function FormFieldDate({ label }: LabelProps) {
   )
 }
 
-export function FormFieldRadioGroup({ legend, options }: RadioGroupProps) {
+export function FormFieldCheckboxGroup({ legend, options }: SelectGroupProps) {
+  const field = useFieldContext<string[]>()
+
+  function handleChange(value: string) {
+    const current = field.state.value
+    const next = current.includes(value)
+      ? current.filter((v) => v !== value)
+      : [...current, value]
+    field.handleChange(next)
+  }
+
+  return (
+    <fieldset className={styles.selectGroup}>
+      <legend>{legend}</legend>
+      {options.map((option) => (
+        <SelectGroupItem
+          type="checkbox"
+          key={option.value}
+          name={field.name}
+          checked={field.state.value.includes(option.value)}
+          onChange={() => handleChange(option.value)}
+          {...{ option }}
+        />
+      ))}
+    </fieldset>
+  )
+}
+
+export function FormFieldRadioGroup({ legend, options }: SelectGroupProps) {
   const field = useFieldContext<string>()
   const errors = hasErrors(field)
 
   return (
-    <fieldset className={styles.radioGroup} aria-describedby={errors ? `${field.name}-error` : undefined}>
+    <fieldset className={styles.selectGroup} aria-describedby={errors ? `${field.name}-error` : undefined}>
       <legend>{legend}</legend>
       {options.map((option) => (
-        <FormFieldRadioGroupItem
+        <SelectGroupItem
           key={option.value}
-          option={option}
+          type="radio"
           name={field.name}
           checked={field.state.value === option.value}
           onChange={() => field.handleChange(option.value)}
+          {...{ option }}
         />
       ))}
       {hasErrors(field) && <FieldErrorMessage />}
@@ -99,13 +129,12 @@ export function FormFieldRadioGroup({ legend, options }: RadioGroupProps) {
   )
 }
 
-function FormFieldRadioGroupItem({ option, name, checked, onChange }: RadioGroupItemProps) {
+function SelectGroupItem({ type, option, name, checked, onChange }: SelectGroupItemProps) {
   return (
-    <label className={styles.radioItem}>
+    <label className={styles.selectItem}>
       <input
-        type="radio"
         value={option.value}
-        {...{ name, checked, onChange }}
+        {...{ type, name, checked, onChange }}
       />
       <span>
         {option.label}
