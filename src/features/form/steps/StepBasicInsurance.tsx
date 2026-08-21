@@ -27,7 +27,7 @@ export const StepBasicInsurance = withForm({
         }}
       >
         {(formGroup) => (
-          <div>
+          <>
             <h2>Basisverzekering</h2>
 
             <form.AppField name="basicInsurance.selectedPlanId">
@@ -43,7 +43,7 @@ export const StepBasicInsurance = withForm({
               onPrevious={() => setStep(1)}
               onNext={() => formGroup.handleSubmit()}
             />
-          </div>
+          </>
         )}
       </form.FormGroup>
     )

@@ -19,7 +19,7 @@ export const StepPersonal = withForm({
         }}
       >
         {(formGroup) => (
-          <div>
+          <>
             <h2>Persoonlijke gegevens</h2>
 
             <form.AppField name="personal.firstName">
@@ -43,7 +43,7 @@ export const StepPersonal = withForm({
             </form.AppField>
 
             <FormNavigation onNext={() => formGroup.handleSubmit()} />
-          </div>
+          </>
         )}
       </form.FormGroup>
     )

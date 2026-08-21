@@ -32,6 +32,7 @@ export function FormFieldText({ label }: LabelProps) {
   return (
     <FormFieldBase label={label}>
       <input
+        className={styles.input}
         id={field.name}
         type="text"
         value={field.state.value}
@@ -50,6 +51,7 @@ export function FormFieldEmail({ label }: LabelProps) {
   return (
     <FormFieldBase label={label}>
       <input
+        className={styles.input}
         id={field.name}
         type="email"
         value={field.state.value}
@@ -68,6 +70,7 @@ export function FormFieldDate({ label }: LabelProps) {
   return (
     <FormFieldBase label={label}>
       <input
+        className={styles.input}
         id={field.name}
         type="date"
         value={field.state.value}
@@ -148,7 +151,7 @@ function FormFieldBase({ label, children }: LabelProps & { children: React.React
   const field = useFieldContext<string>()
 
   return (
-    <div>
+    <div className={styles.base}>
       <label htmlFor={field.name}>{label}</label>
       {children}
       {hasErrors(field) && <FieldErrorMessage />}

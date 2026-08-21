@@ -1,14 +1,20 @@
 :root {
-  --color-text: #6b6375;
-  --color-heading: #08060d;
+  --color-text: #17191C;
+  --color-primary: #003D7ABF;
+  --color-primary-hover: #003C7A;
+  --color-accent: #E0EFFF;
   --color-bg: #fff;
-  --color-error: red;
+  --color-error: #d32f2f;
   --color-border: #ddd;
 
+  --radius-3: 3px;
   --radius-6: 6px;
+  --radius-12: 12px;
 
+  --gap-3: 3px;
   --gap-6: 6px;
   --gap-12: 12px;
+  --gap-24: 24px;
 
   --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
   --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
@@ -43,7 +49,7 @@ h1 {
   margin: 32px 0;
   font-family: var(--heading);
   font-weight: 500;
-  color: var(--color-heading);
+  color: var(--color-primary);
 
   @media (max-width: 1024px) {
     font-size: 36px;

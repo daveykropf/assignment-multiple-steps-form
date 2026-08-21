@@ -1,0 +1,6 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-12);
+  max-width: 480px;
+}

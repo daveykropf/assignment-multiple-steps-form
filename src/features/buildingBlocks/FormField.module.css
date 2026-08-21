@@ -1,5 +1,24 @@
+.base {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-3);
+}
+
+.input {
+  padding: var(--gap-12);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-6);
+  font: inherit;
+
+  &:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 1px;
+  }
+}
+
 .errorMessage {
   color: var(--color-error);
+  font-size: 0.875em;
 }
 
 .selectGroup {
@@ -20,6 +39,6 @@
   cursor: pointer;
 
   &:has(input:checked) {
-    border-color: var(--color-heading);
+    border-color: var(--color-primary);
   }
 }

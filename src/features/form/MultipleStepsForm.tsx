@@ -1,18 +1,20 @@
 import { useState } from 'react'
-
 import { revalidateLogic } from '@tanstack/react-form'
 import { useAppForm } from '../../hooks/form'
 import { multiStepFormOpts } from './shared-form'
 import { useInsuranceData } from '../../hooks/useInsuranceData'
+
 import { StepPersonal } from './steps/StepPersonal'
 import { StepBasicInsurance } from './steps/StepBasicInsurance'
 import { StepAdditional } from './steps/StepAdditional'
 import { StepThankYou } from './steps/StepThankYou'
 
+import styles from './MultipleStepsForm.module.css'
+
 type Step = 1 | 2 | 3 | 4
 
 export function MultipleStepsForm() {
-  const [step, setStep] = useState<Step>(1)
+  const [step, setStep] = useState<Step>(3)
   const { data } = useInsuranceData()
 
   const form = useAppForm({
@@ -35,7 +37,7 @@ export function MultipleStepsForm() {
   })
 
   return (
-    <form onSubmit={handleOnSubmit}>
+    <form className={styles.form} onSubmit={handleOnSubmit}>
       {step === 1 && <StepPersonal setStep={(s) => setStep(s as Step)} {...{ form }} />}
       {step === 2 && <StepBasicInsurance setStep={(s) => setStep(s as Step)} {...{ form }} />}
       {step === 3 && <StepAdditional setStep={(s) => setStep(s as Step)} {...{ form }} />}

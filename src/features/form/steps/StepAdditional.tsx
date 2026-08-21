@@ -18,7 +18,7 @@ export const StepAdditional = withForm({
     if (error) return <ErrorMessage message="Er is wat misgegaan bij het ophalen van de verzekeringen." />
 
     return (
-      <div>
+      <>
         <h2>Aanvullende verzekeringen</h2>
 
         <form.AppField name="additionalInsurance.selectedPlanIds">
@@ -43,7 +43,7 @@ export const StepAdditional = withForm({
           onPrevious={() => setStep(2)}
           onSubmit={() => form.handleSubmit()}
         />
-      </div>
+      </>
     )
   },
 })
