@@ -14,7 +14,7 @@ import styles from './MultipleStepsForm.module.css'
 type Step = 1 | 2 | 3 | 4
 
 export function MultipleStepsForm() {
-  const [step, setStep] = useState<Step>(3)
+  const [step, setStep] = useState<Step>(1)
   const { data } = useInsuranceData()
 
   const form = useAppForm({
