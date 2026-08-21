@@ -1,7 +1,12 @@
 .navigation {
   display: flex;
+  justify-content: flex-end;
   gap: var(--gap-12);
   margin-top: var(--gap-24);
+
+  & :first-child:not(:last-child) {
+    margin-right: auto;
+  }
 }
 
 .button {
