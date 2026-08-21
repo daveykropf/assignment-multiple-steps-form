@@ -33,7 +33,7 @@ export const StepBasicInsurance = withForm({
             <form.AppField name="basicInsurance.selectedPlanId">
               {(field) => (
                 <field.FormFieldRadioGroup
-                  legend="Kies een basisverzekering"
+                  legend="Kies een basisverzekering*"
                   options={basicInsuranceOptions}
                 />
               )}

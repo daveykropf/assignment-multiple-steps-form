@@ -23,23 +23,23 @@ export const StepPersonal = withForm({
             <h2>Persoonlijke gegevens</h2>
 
             <form.AppField name="personal.firstName">
-              {(field) => <field.FormFieldText label="Voornaam" />}
+              {(field) => <field.FormFieldText label="Voornaam*" />}
             </form.AppField>
 
             <form.AppField name="personal.lastName">
-              {(field) => <field.FormFieldText label="Achternaam" />}
+              {(field) => <field.FormFieldText label="Achternaam*" />}
             </form.AppField>
 
             <form.AppField name="personal.address">
-              {(field) => <field.FormFieldText label="Adres" />}
+              {(field) => <field.FormFieldText label="Adres*" />}
             </form.AppField>
 
             <form.AppField name="personal.dateOfBirth">
-              {(field) => <field.FormFieldDate label="Geboortedatum" />}
+              {(field) => <field.FormFieldDate label="Geboortedatum*" />}
             </form.AppField>
 
             <form.AppField name="personal.email">
-              {(field) => <field.FormFieldEmail label="E-mailadres" />}
+              {(field) => <field.FormFieldEmail label="E-mailadres*" />}
             </form.AppField>
 
             <FormNavigation onNext={() => formGroup.handleSubmit()} />
