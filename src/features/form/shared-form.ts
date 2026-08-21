@@ -22,7 +22,7 @@ export const multiStepFormOpts = formOptions({
       selectedPlanId: '',
     },
     additionalInsurance: {
-      selectedPlanIds: [],
+      selectedPlanIds: [] as string[],
     },
   } satisfies DefaultValues,
 })
